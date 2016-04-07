@@ -5,8 +5,9 @@ class ImageController < ActionController::Base
   end
 
   def create
-    pic = Image.create(url: params["url"],
-                      answer: params["answer"])
+    pic = Image.create(image_file_name: params["image_file_name"],
+                      image_content_type: params["image_content_type"],
+                      image_file_size: params["image_file_size"])
     redirect_to :root
   end
 
