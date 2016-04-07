@@ -8,7 +8,8 @@ class ImageController < ActionController::Base
   end
 
   def create
-    pic = Image.create(url: params["url"])
+    pic = Image.create(url: params["url"]
+                      answer: params["answer"])
     redirect_to :root
   end
 
