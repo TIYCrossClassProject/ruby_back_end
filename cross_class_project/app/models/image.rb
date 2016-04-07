@@ -1,8 +1,11 @@
 class Image < ActiveRecord::Base
-  validates :url, presence: true, uniqueness: true
-    format: {
-      with: /http:\/\/.+\.+/||/https:\/\/.+\.+/
-      message: "must include http:// or https:// followed by the site name a period and a filetype"
-    }
+  belongs_to :user
+  has_many :answers
+
+  has_attached_file :image
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+
   validates :answer, presence: true
+
+  validates_presence_of :user_id
 end
