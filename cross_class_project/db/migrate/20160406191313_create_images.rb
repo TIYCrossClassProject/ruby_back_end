@@ -3,7 +3,6 @@ class CreateImages < ActiveRecord::Migration
     create_table :images do |t|
       t.integer :user_id
       t.string :url
-      t.string :answer
 
       t.timestamps null: false
     end
