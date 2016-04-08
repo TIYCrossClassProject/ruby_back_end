@@ -5,9 +5,16 @@ class ImageController < ActionController::Base
   end
 
   def create
-    pic = Image.create(image_file_name: params["image_file_name"],
+    @pic = Image.new(image_file_name: params["image_file_name"],
                       image_content_type: params["image_content_type"],
                       image_file_size: params["image_file_size"])
+    if @pic.save
+      render json: { image: @pic.as_json(only: [:image_file_name,
+        :image_content_type, :image_file_size])}
+                    status: :created
+    else
+      render json: { errors: @pic.errors.full_messages },
+                    status: :unprocessable_entity
     redirect_to :root
   end
 
