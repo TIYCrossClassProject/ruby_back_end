@@ -2,7 +2,6 @@ class SessionsController < ApplicationController
   before_action :authenticate!, only: [:check_auth]
 
   def create
-    binding.pry
     @user = User.find_by!(email: params['email'])
     if @user.authenticate(params['password'])
       render json: { user: @user.as_json(only: [:email, :auth_token]) },
