@@ -5,9 +5,10 @@ class ImageController < ActionController::Base
   end
 
   def create
-    pic = Image.create(image_file_name: params["image_file_name"],
+    @pic = Image.create(image_file_name: params["image_file_name"],
                       image_content_type: params["image_content_type"],
-                      image_file_size: params["image_file_size"])
+                      image_file_size: params["image_file_size"],
+                      answer: params["answer"])
     redirect_to :root
   end
 
