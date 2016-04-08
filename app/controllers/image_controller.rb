@@ -5,6 +5,7 @@ class ImageController < ActionController::Base
   end
 
   def create
+<<<<<<< HEAD:cross_class_project/app/controllers/image_controller.rb
     @pic = Image.new(image_file_name: params["image_file_name"],
                       image_content_type: params["image_content_type"],
                       image_file_size: params["image_file_size"])
@@ -15,6 +16,12 @@ class ImageController < ActionController::Base
     else
       render json: { errors: @pic.errors.full_messages },
                     status: :unprocessable_entity
+=======
+    @pic = Image.create(image_file_name: params["image_file_name"],
+                      image_content_type: params["image_content_type"],
+                      image_file_size: params["image_file_size"],
+                      answer: params["answer"])
+>>>>>>> master:app/controllers/image_controller.rb
     redirect_to :root
   end
 

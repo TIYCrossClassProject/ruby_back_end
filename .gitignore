@@ -1,0 +1,11 @@
+# Ignore bundler
+/.bundler
+
+# Ignore sqlite
+/db/*.sqlite3
+/db/*.sqlite3-journal
+
+/log/*
+!/log/.keep
+/tmp
+.env
