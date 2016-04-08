@@ -26,6 +26,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+# Use Rack-cors for handling Cross-Origin Resource Sharing (CORS)
+gem 'rack-cors', require: 'rack/cors'
 
 gem 'paperclip'
 
@@ -41,7 +43,7 @@ group :development, :test do
   # An IRB alternative and runtime developer console
   gem 'pry'
 
-  gem 'dotenv'
+  gem 'dotenv-rails'
 end
 
 group :development do
