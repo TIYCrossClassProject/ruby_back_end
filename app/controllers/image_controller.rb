@@ -1,19 +1,13 @@
 class ImageController < ActionController::Base
-
-  def new
-    render :new
-  end
+  before_action :authenticate!, only: [:create]
 
   def create
-    pic = Image.create(image_file_name: params["image_file_name"],
-                      image_content_type: params["image_content_type"],
-                      image_file_size: params["image_file_size"])
-    redirect_to :root
-  end
+    @image = logged_in_user.images.create(avatar: params['file'])
 
-  def delete
-    @image = Image.find(params["id"])
-    @image.destroy
-    redirect_to :root
+    if @image.save
+      render 'create.json.jbuilder', status: :created
+    else
+      render json: { errors: @image.errors.full_messages }, status: :unprocessable_entity
+    end
   end
 end
