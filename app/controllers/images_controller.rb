@@ -1,4 +1,4 @@
-class ImageController < ActionController::Base
+class ImagesController < ActionController::Base
   def create
     @pic = Image.create(image: params["image"], answer: params["answer"])
   end
