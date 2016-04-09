@@ -1,26 +1,25 @@
-# sasskwatch
+# sasskwatch API
 
-# api for an image guessing game of technology applications and tools
+api for an image guessing game based on technology applications and tools
 
-## ROUTES
+## Routes
 
-# POST/login
+#### POST/login
 
-# user sign-up
+*user sign-up*
 
-# Body Parameters:
+Body Parameters:
+  - alias: string
+  - first: string
+  - last: string
+  - email: string
+  - password: string
 
-# alias: string
-# first: string
-# last: string
-# email: string
-# password: string
+## Status:
+### 201 OK
+### 422 Unprocessable Entity
 
-# Status:
-# 201 OK
-# 422 Unprocessable Entity
-
-# Request
+**Request**
 
 ```
 {
@@ -32,7 +31,7 @@
 }
 ```
 
-# Response
+**Response**
 
 ```
 {
@@ -46,20 +45,19 @@
 }
 ```
 
-# POST/authorize
+#### POST/authorize
 
-# user credentials created upon sign-up   
+*user credentials created upon sign-up*   
 
-# Header Parameters:
+Header Parameters:
+key: 'Auth-token'
+value: '39dceac031e3b716f4f81b8550d88b17'
 
-# key: 'Auth-token'
-# value: '39dceac031e3b716f4f81b8550d88b17'
+## Status:
+### 200 OK
+### 401 unauthorized
 
-# Status:
-# 200 OK
-# 401 unauthorized
-
-# Response
+**Response**
 
 ```
 {
@@ -67,19 +65,19 @@
 }
 ```
 
-# POST/login
+#### POST/login
 
-# fields required for logging in
+*fields required for logging in*
 
-# Body Parameters:
-# Email: string
-# Password: string
+Body Parameters:
+  - Email: string
+  - Password: string
 
-# Status:
-# 200 OK
-# 401 unauthorized
+## Status:
+### 200 OK
+### 401 unauthorized
 
-# Request
+**Request**
 
 ```
 {
@@ -88,7 +86,7 @@
 }
 ```
 
-# Response
+**Response**
 
 ```
 {
@@ -99,20 +97,19 @@
 }
 ```
 
-# POST/upload_image
+#### POST/upload_image
 
-# upload image by an  authenticated user
+*upload image by an  authenticated user*
 
-# Body Parameters:
+Body Parameters:
+  - file: string  
+  - id: integer
 
-# file: string  
-# id: integer
+## Status:
+### 201 OK
+### 422 Unprocessable Entity
 
-# Status:
-# 201 OK
-# 422 Unprocessable Entity
-
-# Request
+**Request**
 
 ```
 {
@@ -121,7 +118,7 @@
 }
 ```
 
-# Response
+**Response**
 
 ```
 {
