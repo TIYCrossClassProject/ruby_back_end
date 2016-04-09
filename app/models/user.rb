@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_secure_password
   has_many :images
+  has_many :guesses 
 
   validates :auth_token, presence: true
   validates :email, presence: true, uniqueness: true,

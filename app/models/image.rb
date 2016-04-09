@@ -1,5 +1,6 @@
 class Image < ActiveRecord::Base
   belongs_to :user
+  has_many :guesses
 
   has_attached_file :logo
   validates_attachment_content_type :logo, content_type: /\Aimage\/.*\Z/
