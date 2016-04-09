@@ -1,9 +1,9 @@
 options = {
   storage: :s3,
-  bucket: "crossclass.tiy",
+  bucket: "sasskwatch",
   s3_credentials: {
-    access_key_id: ENV["AWS_ACCESS_KEY"],
-    secret_access_key: ENV["AWS_SECRET_KEY"]
+    access_key_id: ENV["AWS_ACCESS_KEY_ID"],
+    secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"]
   },
 #  path: "/:class/:attachment/:id_partition/:style/:filename",
 #  url: ":s3_domain_url",

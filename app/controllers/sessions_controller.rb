@@ -7,17 +7,17 @@ class SessionsController < ApplicationController
       render json: { user: @user.as_json(only: [:email, :auth_token]) },
              status: :ok
     else
-      render json: { message: "Invalid email or password." },
+      render json: { message: 'Invalid email or password.' },
              status: :unauthorized
     end
   end
 
   def check_auth
     if logged_in_user
-      render json: { message: "Logged in as #{logged_in_user.email}" },
+      render json: { message: "Successfully logged in as #{logged_in_user.email}." },
              status: :ok
     else
-      render json: { message: "Auth isn't working yet." },
+      render json: { message: 'Invalid authorization.' },
              status: :unauthorized
     end
   end
