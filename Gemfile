@@ -3,10 +3,11 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
-
+# Ruby interface to the PostgreSQL RDBMS
 gem 'pg'
-# Use SCSS for stylesheets
+# Official AWS SDK for Ruby
 gem 'aws-sdk', '< 2.0'
+# Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -23,12 +24,11 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
-
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-
+# Easy file attachment management for ActiveRecord
 gem 'paperclip'
-
+# Rack Middleware for handling Cross-Origin Resource (CORS), which makes cross-origin AJAX possible
 gem 'rack-cors'
 # Use Unicorn as the app server
 # gem 'unicorn'
@@ -41,14 +41,13 @@ group :development, :test do
   gem 'byebug'
   # An IRB alternative and runtime developer console
   gem 'pry'
-
+  # Autoload dotevn in Rails
   gem 'dotenv-rails'
 end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
