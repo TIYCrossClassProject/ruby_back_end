@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   post 'signup',       to: 'users#create'
 
   post 'upload_image', to: 'images#create'
-  get 'images',        to: 'images#access'
+  get  'images',       to: 'images#index'
 
   post 'guess',        to: 'guesses#create'
   # The priority is based upon order of creation: first created -> highest priority.

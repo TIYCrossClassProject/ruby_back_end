@@ -1,6 +1,11 @@
 class ImagesController < ApplicationController
   before_action :authenticate!, only: [:create]
 
+  def index
+    @image = Image.all
+    render 'index.json.jbuilder', status: :ok 
+  end
+
   def create
     @image = logged_in_user.images.create(logo: params['file'],
                                           answer: params['answer'])
