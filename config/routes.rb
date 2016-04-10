@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
 
-  post 'login',     to: 'sessions#create'
-  post 'authorize', to: 'sessions#check_auth'
+  post 'login',        to: 'sessions#create'
+  post 'authorize',    to: 'sessions#check_auth'
 
-  post 'signup',    to: 'users#create'
+  post 'signup',       to: 'users#create'
 
   post 'upload_image', to: 'images#create'
-  get 'image', to: 'images#access'
+  get 'images',        to: 'images#access'
 
-  post 'guess', to: 'guesses#create'
+  post 'guess',        to: 'guesses#create'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
