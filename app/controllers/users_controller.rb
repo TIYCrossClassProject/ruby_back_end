@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(alias: params['alias'],
-                     #TODO avatar: params['avatar']
+                     avatar: params['avatar'],
                      first: params['first'],
                      last: params['last'],
                      email: params['email'],
