@@ -16,4 +16,9 @@ class ImagesController < ApplicationController
       render json: { errors: @image.errors.full_messages }, status: :unprocessable_entity
     end
   end
+
+  def destroy
+    @image = Image.find(params['id'])
+    @image.destroy
+  end
 end
