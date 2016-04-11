@@ -3,7 +3,7 @@ class ImagesController < ApplicationController
 
   def index
     @image = Image.all
-    render 'index.json.jbuilder', status: :ok 
+    render 'index.json.jbuilder', status: :ok
   end
 
   def create
