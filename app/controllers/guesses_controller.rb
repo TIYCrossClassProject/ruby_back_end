@@ -5,10 +5,11 @@ class GuessesController < ApplicationController
     @guess = logged_in_user.guesses.new(field: params['field'],
                                         image_id: params['id'])
     @image = Image.find_by(id: params['id'])
-
+    
     if @guess.save
       if @guess.image.answer == @guess.field
         @image.update(solution: @guess.id)
+        Guess.increment_counter(:points, @guess.id)
         render 'answer.json.jbuilder', status: :created
       elsif @guess.field
         render 'create.json.jbuilder', status: :created
